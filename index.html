@@ -46,9 +46,11 @@
                     <a class="next" @click="changePrevImg"></a>
 
                      <!--secondo ciclo for  -->
-                     <div class="thumb" v-for="(thumb,image) in slides" :class="image === 0 ? 'active' : ''">
-                        <img :src="thumb.image" :alt="thumb.note" >
-                    </div>
+                     <div class="thumb" v-for="(thumb,image) in slides" :class="image === slides[indexImg].number ? 'active' : ''">
+
+                        <a><img :src="thumb.image" :alt="thumb.note" ></a>
+                        
+                     </div>
 
                 </div>
 
