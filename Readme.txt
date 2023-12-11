@@ -1,0 +1,1 @@
+Gestione carosel tramite vueJs
