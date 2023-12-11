@@ -27,12 +27,13 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0" id="app">
 
+            
                 <!--primo ciclo for  -->
                 <div class="item" v-for="(item,image) in slides" :class="image === 0 ? 'active' : 'none'"  >
-                    <img :src="item.image" :alt="image" >
+                    <img :src="slides[indexImg].image" :alt="image" >
                     <div class="text">
-                        <h3>{{item.title}}</h3>
-                        <p>{{item.text}}</p>
+                        <h3>{{slides[indexImg].title}}</h3>
+                        <p>{{slides[indexImg].text}}</p>
                     </div>
                 </div>
 
@@ -41,11 +42,11 @@
 
 
                 <div class="thumbs">
-                    <a class="prev"></a>
-                    <a class="next"></a>
+                    <a class="prev" @click="changeNexImg"></a>
+                    <a class="next" @click="changePrevImg"></a>
 
                      <!--secondo ciclo for  -->
-                     <div class="thumb" v-for="(thumb,image,note) in slides" :class="image === 0 ? 'active' : ''">
+                     <div class="thumb" v-for="(thumb,image) in slides" :class="image === 0 ? 'active' : ''">
                         <img :src="thumb.image" :alt="thumb.note" >
                     </div>
 

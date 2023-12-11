@@ -11,6 +11,9 @@ createApp({
 
     data() {
         return {
+
+            indexImg: 0,
+
             slides: [
                 {
                     image: 'img/01.webp',
@@ -43,24 +46,37 @@ createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                     note:'Avengers',
                 }
-                ]
+            ]
+                
         }
     },
     methods: {
 
-        chargeImg: function () {
+        changeNexImg: function () {
 
-            this.img1 = "img/prova1.jpg"
+            this.indexImg ++;
 
-            this.messaggio = "Prima del corso Boolean"
+            console.log(this.indexImg);
+
+            if(this.indexImg > this.slides.length - 1){
+
+                this.indexImg=0;
+            }
+
         },
 
-        chargeImg2: function () {
+        changePrevImg: function () {
 
-            this.img1 = "https://images-cdn.9gag.com/photo/aegryWm_700b.jpg"
+            this.indexImg --;
 
-            this.messaggio = "Dopo il corso Boolean"
-        }
+            console.log(this.indexImg);
+
+            if(this.indexImg > this.slides.length - 1){
+
+                this.indexImg=0;
+            }
+
+        },
 
     }
 
