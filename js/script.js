@@ -14,9 +14,12 @@ const { createApp } = Vue;
 createApp({
 
     data() {
+
         return {
 
             indexImg: 0,
+
+            timer : 0,
 
             slides: [
                 {
@@ -72,7 +75,6 @@ createApp({
                 this.indexImg = this.slides.length - 1;
             }
 
-
         },
 
         changePrevImg: function () {
@@ -87,7 +89,27 @@ createApp({
             }
 
         },
+
+
+        //bonus 2
+        IntervalImg() {
+
+            this.timer = setInterval(this.changeNexImg,3000);
+            
+        },
+
+        //bonus3
+        StopAutoPlay() {
+
+            clearInterval(this.timer);
+
+            this.timer = 0;
+        }
   
+    },
+    
+    mounted() {
+        this.IntervalImg();
     }
 
 }).mount('#app');
