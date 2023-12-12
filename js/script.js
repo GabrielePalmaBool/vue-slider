@@ -2,6 +2,10 @@
 
 Creare un carosel usando VueJs
 
+Bonus:
+
+1- al click su una thumb, visualizzare in grande l’immagine corrispondente
+
 */
 
 //SVOLGIMENTO
@@ -83,13 +87,7 @@ createApp({
             }
 
         },
-        
-        changeRandImg: function () {
-           
-            let pippo = document.querySelector('img').innerHTML;
-            console.log(pippo);
-        }
-
+  
     }
 
 }).mount('#app');

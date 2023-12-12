@@ -38,9 +38,6 @@
                 </div>
 
 
-
-
-
                 <div class="thumbs">
                     <a class="prev" @click="changeNexImg"></a>
                     <a class="next" @click="changePrevImg"></a>
@@ -48,7 +45,7 @@
                      <!--secondo ciclo for  -->
                      <div class="thumb" v-for="(thumb,image) in slides" :class="image === slides[indexImg].number ? 'active' : ''">
 
-                        <a><img :src="thumb.image" :alt="thumb.note" ></a>
+                        <a target="_blank" :href="thumb.image"><img :src="thumb.image" :alt="thumb.note" ></a>
                         
                      </div>
 
